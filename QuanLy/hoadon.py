@@ -3,6 +3,7 @@ import json
 import datetime
 import hanghoa
 import customer
+import tonkho
 
 danhsachhoadon=[]
 total={}
@@ -85,6 +86,7 @@ def tao_hoadon():
             if hh["ten"]==ten:
                 danhsach_hanghoa["donggia"]=int(hh["giaban"])
         danhsach_hanghoa["soluong"]=int(input("NHap so luong hang hoa:"))
+        tonkho.ban_hanghoa(danhsach_hanghoa["ten"],danhsach_hanghoa["soluong"])
         danhsach_hanghoa["thanhtien"]=danhsach_hanghoa["soluong"]*danhsach_hanghoa["donggia"]
         hoadon["tongtien_truocthue"]+=danhsach_hanghoa["thanhtien"]
         hoadon["danhsach_hanghoa"].append(danhsach_hanghoa)

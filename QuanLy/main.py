@@ -3,6 +3,7 @@ import hanghoa
 import hoadon
 import user1
 import customer
+import tonkho
 
 def menu_hanghoa():
     while True:
@@ -12,12 +13,15 @@ def menu_hanghoa():
         print("|Chon TLH de tao loai hang hoa       |")
         print("|Chon XLH de xem loai hang hoa       |")
         print("|Chon C de tao hoa don               |")
+        print("|Chon D de nhap hang hoa vao kho     |")
         print("|Chon R de xem thong tin hoa don     |")
         print("|Chon TK de xem thong ke             |")
         print("=====================================+")
         # end menu
         x=input("=> chon chuc nang:")
         print("=> ban da chon chuc nang:",x)
+        if x.upper()=="D":
+            tonkho.nhapkho()
         if x.upper() == 'TLH':
             loaihanghoa.tao_loaihanghoa()
         if x.upper()=='THH':
@@ -39,10 +43,13 @@ def menu_hanghoa():
                 print("|Chon KH de xem khach hang nao mua nhieu nhat                |")
                 print("|Chon LH de xem loai hang nao ban nhieu nhat                 |")
                 print("|Chon DTN de xem ngay nao co doanh thu nhieu nhat trong thang|")
+                print("|CHon K de xem hang hoa nao con ton trong kho                 ")
                 print("|Chon E de thoat khoi thong ke                               |")
                 print("+============================================================+")
                 y=input("Nhap thong ke ban muon:")
                 print("ban da chon chuc nang "+y)
+                if y.upper()=="K":
+                    tonkho.hanghoa_trongkho()
                 if y.upper()=='T':
                     print("Tong doanh thu:",hoadon.total["tong_doanhthu"])
                 if y.upper()=='A':
