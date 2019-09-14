@@ -42,7 +42,7 @@ def menu_hanghoa():
                 print("|Chon BC de xem hang hoa ban nhanh va cham nhat trong thang  |")
                 print("|Chon KH de xem khach hang nao mua nhieu nhat                |")
                 print("|Chon LH de xem loai hang nao ban nhieu nhat                 |")
-                print("|Chon DTN de xem ngay nao co doanh thu nhieu nhat trong thang|")
+                # print("|Chon DTN de xem ngay nao co doanh thu nhieu nhat trong thang|")
                 print("|CHon K de xem hang hoa nao con ton trong kho                 ")
                 print("|Chon E de thoat khoi thong ke                               |")
                 print("+============================================================+")
