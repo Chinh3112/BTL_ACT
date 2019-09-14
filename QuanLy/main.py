@@ -74,9 +74,7 @@ def main():
                 x=input("Chon chuc nang:")
                 print("Ban da cho chuc nang "+x)
                 if x.upper()=="DK":
-                    print(seller["admin"])
                     check_adm=user1.check_admin(seller["admin"])
-                    print(user1.check_admin(seller["admin"]))
                     if check_adm is None:
                         print("Ban chua duoc cap quyen de su dung chuc nang nay.Vui long chon chuc nang khac")
                     else:

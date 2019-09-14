@@ -18,7 +18,6 @@ def loadfile_hanghoa():
                 hanghoa["ten"]=str_to_read[1]
                 hanghoa["giaban"]=str_to_read[2]
                 id_loaihh=str_to_read[3]
-                # print(id_loaihh)
                 if id_loaihh.endswith("\n"):
                     id_loaihh=id_loaihh[0:len(id_loaihh)-1]
                 hanghoa["id_loaihanghoa"]=id_loaihh
@@ -28,7 +27,6 @@ loadfile_hanghoa()
 def tao_hanghoa():
     data={}
     data["id"]=input("Nhap id hang hoa:")
-    # print(data)
     tim_idhanghoa=kiemtra_hanghoa(id)
     if tim_idhanghoa is not None:
         print("Id hang hoa da ton tai,xin moi chon chuc nang khac")
@@ -52,14 +50,12 @@ def kiemtra_hanghoa(id=None):
         id=input("Vui long nhap id:")
     for hanghoa in danhsachhanghoa:
         if hanghoa["id"]==id:
-            # print(hanghoa)
             return hanghoa
 #end kiem tra hang hoa
 def xem_hanghoa():
     print("+{:-^4}+{:-<10}+{:-<10}+{:-^10}+".format('','','',''))
     print("|{:^4}|{:^10}|{:^10}|{:^10}|".format('id','ten','giaban','id_loaihh'))
     for hanghoa in danhsachhanghoa:
-        # print(hanghoa)
         print("|{:^4}|{:^10}|{:^10}|{:^10}|".format(hanghoa["id"],hanghoa["ten"],hanghoa["giaban"],hanghoa["id_loaihanghoa"]))
     print("+{:-^4}+{:-<10}+{:-<10}+{:-^10}+".format('','','',''))
 #end xem hang hoa
@@ -76,7 +72,7 @@ def hanghoa_banra():
     return hanghoaban
 def hanghoa_banchay():
     hanghoaban=hanghoa_banra()
-    print(hanghoaban)
+    # print(hanghoaban)
     gtr_max=hanghoaban[danhsachhanghoa[0]["ten"]]
     gtr_min=hanghoaban[danhsachhanghoa[0]["ten"]]
     for hh in hanghoaban:
@@ -119,4 +115,4 @@ def loaihang_bannhieu():
             print(loai["tenloai"]+" co doanh thu cao nhat trong thansg voi :"+str(loai["doanhthu"]))
         if max_soluong==loai["soluong"]:
             print(loai["tenloai"] +" co so luong hang ban ra nhieu nhat trong thang:"+str(loai["soluong"]))
-    print(loaihang_banra)
+    # print(loaihang_banra)

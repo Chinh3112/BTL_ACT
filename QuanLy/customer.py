@@ -35,9 +35,7 @@ def load_khachhang():
             danhsachkhachhang.append(khach)
             line=f.readline()
 load_khachhang()
-# print(danhsach_tenkhachhang)
 def update_khachhang():
-    # print(1)
     list_khach=[]
     i=0
     for khachhang in danhsach_tenkhachhang:
@@ -49,7 +47,6 @@ def update_khachhang():
         khach["soluong"]=0
         khach["tiemnang"]=0
         list_khach.append(khach)
-    # print(list_khach)
     with open('../user/customer.csv','r+') as f1:
         f1.truncate()
     danhsachkhachhang.clear()
