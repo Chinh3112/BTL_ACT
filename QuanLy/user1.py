@@ -43,10 +43,8 @@ def loadfile_user():
             user1["email"]=line[3]
             user1["admin"]=line[4]
             user_list.append(user1)
-            # print(line)
             line=f.readline()
 loadfile_user()
-# print(user_list)
 def check_admin(id):
     for user in user_list:
         if id==user["id_user"]:
@@ -110,10 +108,6 @@ def sua():
     while check is None:
         id_user=input("ID chua ton tai.Nhap lai:")
         check=check_id(id_user)
-    # check_adm=check_admin(id_user)
-    # if check_adm==0:
-    #     print("Ban chua duoc cap quyen de su dung chuc nang nay.Vui long chon chuc nang khac")
-    #     return
     for user in user_list:
         if user["id_user"]==id_user:
             print("+=============================+")
