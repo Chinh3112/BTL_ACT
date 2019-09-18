@@ -52,17 +52,17 @@ def check_admin(id):
 
 def check_id(id=None):
     if id==None:
-        id=print("Vui long nhap lai id:")
+        id=print("Vui long nhap lai ID:")
     for user in user_list:
         if id==user["id_user"]:
             return id
 
 def tao_taikhoan():
     user1={}
-    id_user=input("Nhap id cua ban:")
+    id_user=input("Nhap ID cua ban:")
     check=check_id(id_user)
     while check is not None:
-        id_user=input("Id da ton tai.Nhap ID khac:")
+        id_user=input("ID da ton tai.Nhap ID khac:")
         check=check_id(id_user)
     user1["id_user"]=id_user
     user1["name"]=input("Nhap ten cua ban:")
@@ -87,10 +87,10 @@ def check_password(id,password):
                 return 1
 # tao_taikhoan()
 def dangnhap():
-    id_user=input("Hay nhap id cua ban:")
+    id_user=input("Hay nhap ID cua ban de dang nhap:")
     check=check_id(id_user)
     while check is None:
-        id_user=input("Id chua ton tai.Nhap lai id:")
+        id_user=input("ID chua ton tai.Nhap lai ID:")
         check=check(id_user)
     password=input("Vui long nhap mat khau cua ban:")
     check_pass=check_password(id_user,password)
@@ -103,7 +103,7 @@ def dangnhap():
             return user
 # dangnhap()
 def sua():
-    id_user=input("Nhap id user ban muon sua:")
+    id_user=input("Nhap ID user ban muon sua:")
     check=check_id(id_user)
     while check is None:
         id_user=input("ID chua ton tai.Nhap lai:")
@@ -124,21 +124,24 @@ def sua():
                 if x.upper()=="2":
                     password=input("Thay doi mat khau cua ban.Hay nhap mat khau moi:")
                     user["password"]=hashlib.sha256(password.encode()).hexdigest()
-                if x.upper=="3":
+                if x.upper()=="3":
                     user["email"]=input("THay doi email cua ban.Hay nhap email moi:")
                 if x.upper()=="4":
                     user["admin"]=input("Thay doi quyen truy cap:")
                 if x.upper()=="E":
                     break
                 x=input("Ban muon sua:")
+    print(user_list)
     with open('../user/list_user.csv','r+') as f:
         f.truncate()
     for user in user_list:
-        str_to_save=User(user["id_user"],user["name"],user["password"],user["email"],user["admin"])
-        str_to_save.dangki()
+        print(user)
+        nhanvien=User(user["id_user"],user["name"],user["password"],user["email"],user["admin"])
+        nhanvien.dangki()
+        
 # sua()
 def xoa():
-    id_user=input("Nhap id ban muon xoa:")
+    id_user=input("Nhap Id ban muon xoa:")
     check=check_id(id_user)
     while check is None:
         id_user=input("ID chua ton tai.Nhap lai ID ban muon xoa:")

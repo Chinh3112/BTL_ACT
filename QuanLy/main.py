@@ -42,7 +42,7 @@ def menu_hanghoa():
                 print("|Chon BC de xem hang hoa ban nhanh va cham nhat trong thang  |")
                 print("|Chon KH de xem khach hang nao mua nhieu nhat                |")
                 print("|Chon LH de xem loai hang nao ban nhieu nhat                 |")
-                print("|CHon K de xem hang hoa nao con ton trong kho                 ")
+                print("|CHon K de xem hang hoa nao con ton trong kho                |")
                 print("|Chon E de thoat khoi thong ke                               |")
                 print("+============================================================+")
                 y=input("Nhap thong ke ban muon:")
@@ -66,9 +66,9 @@ def menu_hanghoa():
 def main():
     while True:
         print("Xin chao ! Vui long dang nhap:")
-        seller=user1.dangnhap()
+        nhanvien=user1.dangnhap()
         # print(seller)
-        if seller is not None:
+        if nhanvien is not None:
             while True:
                 print("+=================================+")
                 print("|Nhap DK de tao tai khoan         |")
@@ -80,19 +80,19 @@ def main():
                 x=input("Chon chuc nang:")
                 print("Ban da cho chuc nang "+x)
                 if x.upper()=="DK":
-                    check_adm=user1.check_admin(seller["admin"])
+                    check_adm=user1.check_admin(nhanvien["admin"])
                     if check_adm is None:
                         print("Ban chua duoc cap quyen de su dung chuc nang nay.Vui long chon chuc nang khac")
                     else:
                         user1.tao_taikhoan()
                 if x.upper()=="ED":
-                    check_adm=user1.check_admin(seller["admin"])
+                    check_adm=user1.check_admin(nhanvien["admin"])
                     if check_adm is None:
                         print("Ban chua duoc cap quyen de su dung chuc nang nay.Vui long chon chuc nang khac")
                     else:
                         user1.sua()
                 if x.upper()=="DE":
-                    check_adm=user1.check_admin(seller["admin"])
+                    check_adm=user1.check_admin(nhanvien["admin"])
                     if check_adm is None:
                         print("Ban chua duoc cap quyen de su dung chuc nang nay.Vui long chon chuc nang khac")
                     else:
